@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ETLHospital"
+  DTS:DTSID="{0E3F9AEA-05A6-4281-BC72-13709D8ABE34}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ETLHospital;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services EjercicioETL-{0E3F9AEA-05A6-4281-BC72-13709D8ABE34}LocalHost.ETLHospital;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

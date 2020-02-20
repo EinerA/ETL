@@ -1,0 +1,1455 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/20/2017 1:41:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1GR4DUD"
+  DTS:CreatorName="DESKTOP-1GR4DUD\joseb"
+  DTS:DTSID="{07FED870-76E9-4290-83B2-6C35C4B3D480}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="ETL1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{5478D9D3-A31B-4BB9-8F7E-DF62644A4657}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{8CB52396-D40F-4776-A33A-F766E1BC21EC}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\joseb\Desktop\BI\ETL.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{987A63BC-B12D-4AC5-A5DE-E378B073CFE2}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\joseb\Desktop\BI\ETL.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F99D1237-CB60-4FFE-B765-B0D5D6988A67}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\joseb\Desktop\BI\ETL.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETLHospital 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C38BC44C-160A-4ADB-98E5-65ED7BBBEDEB}"
+      DTS:ObjectName="LocalHost.ETLHospital 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETLHospital;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ETL1-{C38BC44C-160A-4ADB-98E5-65ED7BBBEDEB}LocalHost.ETLHospital 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETLHospital 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1517AA7E-79CE-498C-8E44-35A6D93F3D09}"
+      DTS:ObjectName="LocalHost.ETLHospital 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETLHospital;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ETL1-{1517AA7E-79CE-498C-8E44-35A6D93F3D09}LocalHost.ETLHospital 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETLHospital 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{797CD1DD-760A-4E57-AE7C-AEFE7247876D}"
+      DTS:ObjectName="LocalHost.ETLHospital 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETLHospital;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ETL1-{797CD1DD-760A-4E57-AE7C-AEFE7247876D}LocalHost.ETLHospital 3;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Hospital"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5F3983D6-50CB-4058-BECA-DBEC1DEDB532}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hospital"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Hospital\Ingresos"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Ingresos"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Ingresos$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\Ingresos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Hospital\Ingresos.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Nro_histo]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[Nro_histo]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Nro_histo]"
+                      name="Nro_histo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Fecha_ingreso]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[Fecha_ingreso]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Fecha_ingreso]"
+                      name="Fecha_ingreso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[cod_ide_med]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[cod_ide_med]"
+                      length="255"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[cod_ide_med]"
+                      name="cod_ide_med"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_planta]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[num_planta]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_planta]"
+                      name="num_planta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_cama]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[num_cama]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_cama]"
+                      name="num_cama"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[diagnostico]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[diagnostico]"
+                      length="255"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[diagnostico]"
+                      name="diagnostico"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[costo_tratam]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[costo_tratam]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[costo_tratam]"
+                      name="costo_tratam"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[Nro_histo]"
+                      dataType="r8"
+                      name="Nro_histo" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[Fecha_ingreso]"
+                      dataType="date"
+                      name="Fecha_ingreso" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[cod_ide_med]"
+                      dataType="wstr"
+                      length="255"
+                      name="cod_ide_med" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[num_planta]"
+                      dataType="r8"
+                      name="num_planta" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[num_cama]"
+                      dataType="r8"
+                      name="num_cama" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[diagnostico]"
+                      dataType="wstr"
+                      length="255"
+                      name="diagnostico" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Output].ExternalColumns[costo_tratam]"
+                      dataType="r8"
+                      name="costo_tratam" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[Nro_histo]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[Nro_histo]"
+                      name="Nro_histo" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[Fecha_ingreso]"
+                      dataType="date"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[Fecha_ingreso]"
+                      name="Fecha_ingreso" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[cod_ide_med]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[cod_ide_med]"
+                      name="cod_ide_med" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[num_planta]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[num_planta]"
+                      name="num_planta" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[num_cama]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[num_cama]"
+                      name="num_cama" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[diagnostico]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[diagnostico]"
+                      name="diagnostico" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[costo_tratam]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[costo_tratam]"
+                      name="costo_tratam" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hospital\Medicos"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Medicos"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Medicos$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\Medicos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Hospital\Medicos.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[cod_identi_medico]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[cod_identi_medico]"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[cod_identi_medico]"
+                      name="cod_identi_medico"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Apellidos]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Apellidos]"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Apellidos]"
+                      name="Apellidos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Especialidad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Especialidad]"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Especialidad]"
+                      name="Especialidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[num_colegiado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[num_colegiado]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[num_colegiado]"
+                      name="num_colegiado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Cargo]"
+                      name="Cargo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[cod_identi_medico]"
+                      dataType="wstr"
+                      length="255"
+                      name="cod_identi_medico" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Apellidos]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Especialidad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Especialidad" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[num_colegiado]"
+                      dataType="r8"
+                      name="num_colegiado" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[cod_identi_medico]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[cod_identi_medico]"
+                      name="cod_identi_medico" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Apellidos]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Apellidos]"
+                      name="Apellidos" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Especialidad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Especialidad]"
+                      name="Especialidad" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[num_colegiado]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[num_colegiado]"
+                      name="num_colegiado" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hospital\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Pacientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.ETLHospital 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.ETLHospital 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[numero_historial]"
+                      cachedDataType="r8"
+                      cachedName="numero_historial"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[numero_historial]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[numero_historial]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nom_paciente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nom_paciente"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nom_paciente]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[nom_paciente]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[apelli_paciante]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="apelli_paciante"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[apelli_paciante]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[apelli_paciante]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[domicilio]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="domicilio"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[domicilio]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[domicilio]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[poblacion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="poblacion"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[poblacion]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[poblacion]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Provincia]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Provincia"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[Provincia]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[numero_historial]"
+                      dataType="r8"
+                      name="numero_historial" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nom_paciente]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_paciente" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[apelli_paciante]"
+                      dataType="wstr"
+                      length="255"
+                      name="apelli_paciante" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="255"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[poblacion]"
+                      dataType="wstr"
+                      length="255"
+                      name="poblacion" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      dataType="wstr"
+                      length="255"
+                      name="Provincia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Hospital\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hospital\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Medicos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.ETLHospital 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.ETLHospital 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[cod_identi_medico]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="cod_identi_medico"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[cod_identi_medico]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[cod_identi_medico]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Apellidos]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellidos"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Apellidos]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Apellidos]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Especialidad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Especialidad"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Especialidad]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Especialidad]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[num_colegiado]"
+                      cachedDataType="r8"
+                      cachedName="num_colegiado"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[num_colegiado]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[num_colegiado]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Cargo]"
+                      lineageId="Package\Hospital\Medicos.Outputs[Excel Source Output].Columns[Cargo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[cod_identi_medico]"
+                      dataType="wstr"
+                      length="255"
+                      name="cod_identi_medico" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Apellidos]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Especialidad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Especialidad" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[num_colegiado]"
+                      dataType="r8"
+                      name="num_colegiado" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Hospital\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hospital\OLE DB Destination 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Ingresos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\OLE DB Destination 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.ETLHospital 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.ETLHospital 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Nro_histo]"
+                      cachedDataType="r8"
+                      cachedName="Nro_histo"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Nro_histo]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Nro_histo]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Fecha_ingreso]"
+                      cachedDataType="date"
+                      cachedName="Fecha_ingreso"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Fecha_ingreso]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[Fecha_ingreso]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[cod_ide_med]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="cod_ide_med"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[cod_ide_med]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[cod_ide_med]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[num_planta]"
+                      cachedDataType="r8"
+                      cachedName="num_planta"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[num_planta]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_planta]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[num_cama]"
+                      cachedDataType="r8"
+                      cachedName="num_cama"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[num_cama]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[num_cama]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[diagnostico]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="diagnostico"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[diagnostico]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[diagnostico]" />
+                    <inputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[costo_tratam]"
+                      cachedDataType="r8"
+                      cachedName="costo_tratam"
+                      externalMetadataColumnId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[costo_tratam]"
+                      lineageId="Package\Hospital\Ingresos.Outputs[Excel Source Output].Columns[costo_tratam]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Nro_histo]"
+                      dataType="r8"
+                      name="Nro_histo" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Fecha_ingreso]"
+                      dataType="dbTimeStamp"
+                      name="Fecha_ingreso" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[cod_ide_med]"
+                      dataType="wstr"
+                      length="255"
+                      name="cod_ide_med" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[num_planta]"
+                      dataType="r8"
+                      name="num_planta" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[num_cama]"
+                      dataType="r8"
+                      name="num_cama" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[diagnostico]"
+                      dataType="wstr"
+                      length="255"
+                      name="diagnostico" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[costo_tratam]"
+                      dataType="r8"
+                      name="costo_tratam" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Hospital\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hospital\Pacientes"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Pacientes"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Pacientes$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hospital\Pacientes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Hospital\Pacientes.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[numero_historial]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[numero_historial]"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[numero_historial]"
+                      name="numero_historial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[nom_paciente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[nom_paciente]"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[nom_paciente]"
+                      name="nom_paciente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[apelli_paciante]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[apelli_paciante]"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[apelli_paciante]"
+                      name="apelli_paciante"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[domicilio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[domicilio]"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[domicilio]"
+                      name="domicilio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[poblacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[poblacion]"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[poblacion]"
+                      name="poblacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[Provincia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[Provincia]"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Output].Columns[Provincia]"
+                      name="Provincia"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[numero_historial]"
+                      dataType="r8"
+                      name="numero_historial" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[nom_paciente]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_paciente" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[apelli_paciante]"
+                      dataType="wstr"
+                      length="255"
+                      name="apelli_paciante" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="255"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[poblacion]"
+                      dataType="wstr"
+                      length="255"
+                      name="poblacion" />
+                    <externalMetadataColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Output].ExternalColumns[Provincia]"
+                      dataType="wstr"
+                      length="255"
+                      name="Provincia" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[numero_historial]"
+                      dataType="r8"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[numero_historial]"
+                      name="numero_historial" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[nom_paciente]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[nom_paciente]"
+                      name="nom_paciente" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[apelli_paciante]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[apelli_paciante]"
+                      name="apelli_paciante" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[domicilio]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[domicilio]"
+                      name="domicilio" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[poblacion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[poblacion]"
+                      name="poblacion" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[Provincia]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[Provincia]"
+                      name="Provincia" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hospital\Pacientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Hospital.Paths[Excel Source Output]"
+              endId="Package\Hospital\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Hospital\Pacientes.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Hospital.Paths[Excel Source Output1]"
+              endId="Package\Hospital\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Hospital\Medicos.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Hospital.Paths[Excel Source Output2]"
+              endId="Package\Hospital\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Hospital\Ingresos.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Hospital"
+          TopLeft="169,83" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Hospital">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Hospital\Pacientes"
+          TopLeft="96,55" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Hospital\Medicos"
+          TopLeft="353,53" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Hospital\Ingresos"
+          TopLeft="591,53" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Hospital\OLE DB Destination"
+          TopLeft="90,194" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Hospital\OLE DB Destination 1"
+          TopLeft="344,196" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Hospital\OLE DB Destination 2"
+          TopLeft="580,198" />
+        <EdgeLayout
+          Id="Package\Hospital.Paths[Excel Source Output]"
+          TopLeft="157.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97"
+              Start="0,0"
+              End="0,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Hospital.Paths[Excel Source Output1]"
+          TopLeft="411.25,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Hospital.Paths[Excel Source Output2]"
+          TopLeft="653,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,103"
+              Start="0,0"
+              End="0,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\Pacientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\Medicos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\Ingresos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hospital\OLE DB Destination 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

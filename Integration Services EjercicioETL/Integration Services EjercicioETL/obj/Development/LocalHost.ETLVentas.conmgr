@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ETLVentas"
+  DTS:DTSID="{01E3AE27-3E4D-40C6-AC8F-68D5CDC02DC2}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ETLVentas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services EjercicioETL-{01E3AE27-3E4D-40C6-AC8F-68D5CDC02DC2}LocalHost.ETLVentas;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
